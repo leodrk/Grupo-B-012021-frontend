@@ -7,7 +7,7 @@
 
     function Service($http, $localStorage) {
         var service = {};
-
+        var urlBase = 'http://localhost:8080/';
         service.Login = Login;
         service.Logout = Logout;
         service.Register = Register;
@@ -34,16 +34,14 @@
                 });
         }
         function Register(username, password,platform, callback) {
-            $http.post('http://localhost:8080/api/register', { username: username, password: password , platform: platform})
+            $http.post(urlBase+'api/register', { username: username, password: password , platform: platform})
                 .success(function (response) {
-                    // login successful if there's a token in the response
+                    // Se crea la cuenta
                     if (response.token) {
                         // store username and token in local storage to keep user logged in between page refreshes
                         $localStorage.currentUser = { username: username, token: response.token };
-
                         // add jwt token to auth header for all requests made by the $http service
                         $http.defaults.headers.common.Authorization = 'Bearer ' + response.token;
-
                         // execute callback with true to indicate successful login
                         callback(true);
                     } else {
