@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app', ['ui.router', 'ngMessages', 'ngStorage', 'ngMockE2E'])
+        .module('app', ['ui.router', 'ngMessages', 'ngStorage'])
         .config(config)
         .run(run);
 
