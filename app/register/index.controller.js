@@ -10,12 +10,17 @@
         var vm = this;
 
         vm.register = register;
+        vm.login = login;
 
         initController();
 
         function initController() {
             // reset login status
             AuthenticationService.Logout();
+        }
+
+        function login() {
+            $location.path('/login');
         }
 
         function register() {
