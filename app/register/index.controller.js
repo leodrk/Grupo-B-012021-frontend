@@ -3,12 +3,13 @@
 
     angular
         .module('app')
-        .controller('Login.IndexController', Controller);
+        .controller('Register.IndexController', Controller);
 
     function Controller($location, AuthenticationService) {
+
         var vm = this;
 
-        vm.login = login;
+        vm.register = register;
 
         initController();
 
@@ -17,13 +18,13 @@
             AuthenticationService.Logout();
         }
 
-        function login() {
+        function register() {
             vm.loading = true;
-            AuthenticationService.Login(vm.username, vm.password, function (result) {
+            AuthenticationService.Register(vm.username, vm.password, vm.platform, function (result) {
                 if (result === true) {
-                    $location.path('/');
+                    $location.path('/login');
                 } else {
-                    vm.error = 'Username or password is incorrect';
+                    vm.error = 'Ah ocurrido un error registrando un nuevo usuario';
                     vm.loading = false;
                 }
             });
