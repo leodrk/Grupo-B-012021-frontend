@@ -34,7 +34,11 @@
                 });
         }
         function Register(username, password, platform, callback) {
-            $http.post(urlBase+'register', { username: username, password: password , platform: platform});
+            $http.post(urlBase+'register', { username: username, password: password , platform: platform}, {responseType:'json'}).then(function onSuccess(response) {
+                callback(true);
+            }).catch(function onError(response) {
+                callback(false);
+            });
         }
 
         function Logout() {
