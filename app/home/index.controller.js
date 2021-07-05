@@ -46,6 +46,7 @@
                         }
                     },
                     series: [{
+                        name: "Timeline",
                         data: response.data.reviewAmount
                     }]
                 });
