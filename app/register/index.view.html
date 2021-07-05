@@ -32,11 +32,10 @@
             </div>
             <div class="col-md-6">
                 <select name="singleSelect" ng-model="vm.platform" required>
-                    <option value="platform-1">Netflix</option>
-                    <option value="platform-2">Amazon Prime</option>
-                    <option value="platform-3">Disney +</option>
-                    <option value="platform-4">HBO</option>
-                    <option value="platform-5">Google Play</option>
+                    <option value="Netflix">Netflix</option>
+                    <option value="Amazon">Amazon Prime</option>
+                    <option value="Disney+">Disney+</option>
+                    <option value="Paramount+">Paramount+</option>
                 </select><br>
                 <div ng-messages="form.$submitted && form.platform.$error" class="help-block">
                     <div ng-message="required">Platform is required</div>

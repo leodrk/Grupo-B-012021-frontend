@@ -15,12 +15,11 @@
         return service;
 
         function Login(username, password, callback) {
-            $http.post(urlBase+'login', { username: username, password: password })
-                .success(function (response) {
+            $http.post(urlBase+'login', { username: username, password: password }, {responseType:'json'}).then(function onSuccess(response) {
                     // login successful if there's a token in the response
-                    if (response.token) {
+                    if (response.data.token) {
                         // store username and token in local storage to keep user logged in between page refreshes
-                        $localStorage.currentUser = { username: username, token: response.token };
+                        $localStorage.currentUser = { username: username, token: response.data.token, platform: response.data.platform };
 
                         // add jwt token to auth header for all requests made by the $http service
                         $http.defaults.headers.common.Authorization = 'Bearer ' + response.token;
