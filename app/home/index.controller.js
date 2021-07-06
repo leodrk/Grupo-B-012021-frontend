@@ -14,7 +14,8 @@
         function initController() {
             $http({
                 method : "GET",
-                url : urlBase+"api/review/getReviewsByMonth/"+$localStorage.currentUser.platform
+                url : urlBase+"api/review/getReviewsByMonth/"+$localStorage.currentUser.platform,
+                headers:{'Authorization':$localStorage.currentUser.token} 
             }).then(function mySuccess(response) {
                 Highcharts.chart('container', {
                     chart: {
