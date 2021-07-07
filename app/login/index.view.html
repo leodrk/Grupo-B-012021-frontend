@@ -1,7 +1,7 @@
-﻿<div class="wallpaper">
+﻿<div>
     <div class="col-md-7 col-md-offset-2">
         <h2>{{'loginTitle' | translate}}:</h2>
-        <form name="form" ng-submit="form.$valid &amp;&amp; vm.login()" novalidate="" class="ng-pristine ng-invalid ng-invalid-required" style="background-color: #fffc;padding: 15px;">
+        <form name="form" ng-submit="form.$valid &amp;&amp; vm.login()" novalidate="" class="ng-pristine ng-invalid ng-invalid-required">
             <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.username.$invalid }">
                 <label for="username">{{'name' | translate}}</label>
                 <input type="text" name="username" class="form-control" ng-model="vm.username" required />

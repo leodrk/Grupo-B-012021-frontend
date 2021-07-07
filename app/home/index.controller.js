@@ -52,7 +52,7 @@
                     }]
                 });
             }, function myError(response) {
-                console.log("no aguante todo");
+                console.log("falló Highcharts");
             });
         }
     }
