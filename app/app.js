@@ -2,14 +2,34 @@
     'use strict';
 
     angular
-        .module('app', ['ui.router', 'ngMessages', 'ngStorage'])
+        .module('app', ['ui.router', 'ngMessages', 'ngStorage', 'pascalprecht.translate'])
         .config(config)
         .run(run);
 
-    function config($stateProvider, $urlRouterProvider) {
+    function config($stateProvider, $urlRouterProvider, $translateProvider) {
         // default route
         $urlRouterProvider.otherwise("/");
+        var en_translations = {
+            "name"      : "Name",
+            "password"  : "Password",
+            "login"     : "Login",
+            "Urequired" : "Username is Required",
+            "Prequired" : "Password is Required",
+        };
 
+        var sp_translations = {
+            "name"      : "Nombre",
+            "password"  : "Contraseña",
+            "login"     : "Ingresar",
+            "Urequired" : "Nombre de usuario Requerido",
+            "Prequired" : "Contraseña Requerida",
+        };
+
+        $translateProvider.translations('en',en_translations);
+
+        $translateProvider.translations('sp',sp_translations);
+
+        $translateProvider.preferredLanguage('en');
         // app routes
         $stateProvider
             .state('home', {
@@ -30,6 +50,7 @@
                 controller: 'Register.IndexController',
                 controllerAs: 'vm'
             });
+
     }
 
     function run($rootScope, $http, $location, $localStorage) {
