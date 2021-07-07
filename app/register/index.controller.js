@@ -5,12 +5,13 @@
         .module('app')
         .controller('Register.IndexController', Controller);
 
-    function Controller($location, AuthenticationService) {
+    function Controller($location, AuthenticationService, $translate) {
 
         var vm = this;
 
         vm.register = register;
         vm.login = login;
+        vm.changeLanguage = changeLanguage;
 
         initController();
 
@@ -19,6 +20,10 @@
             AuthenticationService.Logout();
         }
 
+        function changeLanguage(lang){
+            console.log(lang);
+            $translate.use(lang);
+        }
         function login() {
             $location.path('/login');
         }

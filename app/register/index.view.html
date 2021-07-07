@@ -1,34 +1,34 @@
 ﻿<div class="col-md-7 col-md-offset-2">
     <div class="alert alert-info">
-        Registre nuevo usuario: <br>
+        {{'registerTitle' | translate}}: <br>
     </div>
-    <h2>Registro de nuevo usuario:</h2>
-    <form name="form" ng-submit="form.$valid && vm.register()" novalidate>
+    <h2>{{'registerTitle' | translate}}:</h2>
+    <form name="form" ng-submit="form.$valid && vm.register()" novalidate="" class="ng-pristine ng-invalid ng-invalid-required" style="background-color: #fffc;padding: 15px;">
         <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.username.$invalid }">
             <div class="col-md-6">
-                <label for="username">Nombre:</label>
+                <label for="username">{{'name' | translate}}:</label>
             </div>
             <div class="col-md-6">
                 <input type="text" name="username" class="form-control" ng-model="vm.username" required />
                 <div ng-messages="form.$submitted && form.username.$error" class="help-block">
-                    <div ng-message="required">Username is required</div>
+                    <div ng-message="required">{{'Urequired' | translate}}</div>
                 </div>
             </div>
         </div>
         <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.password.$invalid }">
             <div class="col-md-6">
-                <label for="password">Contraseña:</label>
+                <label for="password">{{'password' | translate}}:</label>
             </div>
             <div class="col-md-6">
                 <input type="password" name="password" class="form-control" ng-model="vm.password" required />
                 <div ng-messages="form.$submitted && form.password.$error" class="help-block">
-                    <div ng-message="required">Password is required</div>
+                    <div ng-message="required">{{'Prequired' | translate}}</div>
                 </div>
             </div>
         </div>
         <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.platform.$invalid }">
             <div class="col-md-6">
-                <label for="platform">Plataforma:</label>
+                <label for="platform">{{'platform' | translate}}:</label>
             </div>
             <div class="col-md-6">
                 <select name="singleSelect" ng-model="vm.platform" required>
@@ -38,17 +38,21 @@
                     <option value="Paramount+">Paramount+</option>
                 </select><br>
                 <div ng-messages="form.$submitted && form.platform.$error" class="help-block">
-                    <div ng-message="required">Platform is required</div>
+                    <div ng-message="required">{{'PLrequired' | translate}}</div>
                 </div>
             </div>
         </div>
         <div class="form-group">
-            <button ng-disabled="vm.loading" class="btn btn-primary">Registrarse</button>
+            <button ng-disabled="vm.loading" class="btn btn-primary">{{'register' | translate}}</button>
             <img ng-if="vm.loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
         </div>
         <div ng-if="vm.error" class="alert alert-danger">{{vm.error}}</div>
     </form>
     <div>
-        <button ng-click="vm.login()" class="btn btn-success">Ya tengo cuenta</button>
+        <button ng-click="vm.login()" class="btn btn-success">{{'already' | translate}}</button>
     </div>
+</div>
+<div class="col-md-3">
+    <button ng-click="vm.changeLanguage('en')">English</button>
+    <button ng-click="vm.changeLanguage('sp')">Spanish</button>
 </div>

@@ -10,26 +10,38 @@
         // default route
         $urlRouterProvider.otherwise("/");
         var en_translations = {
-            "name"      : "Name",
-            "password"  : "Password",
-            "login"     : "Login",
-            "Urequired" : "Username is Required",
-            "Prequired" : "Password is Required",
+            "name"            : "Name",
+            "password"        : "Password",
+            "login"           : "Login",
+            "register"        : "Register",
+            "platform"        : "Platform",
+            "already"         : "I have an account",
+            "registerTitle"   : "New User Register",
+            "loginTitle"      : "Log In",
+            "PLrequired"      : "Platform is Required",
+            "Urequired"       : "Username is Required",
+            "Prequired"       : "Password is Required",
         };
 
         var sp_translations = {
-            "name"      : "Nombre",
-            "password"  : "Contraseña",
-            "login"     : "Ingresar",
-            "Urequired" : "Nombre de usuario Requerido",
-            "Prequired" : "Contraseña Requerida",
+            "name"            : "Nombre",
+            "password"        : "Contraseña",
+            "login"           : "Ingresar",
+            "register"        : "Registrarse",
+            "platform"        : "Plataforma",
+            "already"         : "Ya tengo cuenta",
+            "registerTitle"   : "Registro de nuevo usuario",
+            "loginTitle"      : "Iniciar Sesión",
+            "PLrequired"      : "Plataforma Requerida",
+            "Urequired"       : "Nombre de usuario Requerido",
+            "Prequired"       : "Contraseña Requerida",
         };
 
         $translateProvider.translations('en',en_translations);
 
         $translateProvider.translations('sp',sp_translations);
 
-        $translateProvider.preferredLanguage('en');
+        $translateProvider.preferredLanguage('sp');
         // app routes
         $stateProvider
             .state('home', {
