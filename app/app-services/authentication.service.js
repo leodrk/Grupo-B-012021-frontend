@@ -7,7 +7,7 @@
 
     function Service($http, $localStorage) {
         var service = {};
-        var urlBase = 'http://localhost:8080/';
+        var urlBase = 'https://grupo-b-012021-backend.herokuapp.com/';
         service.Login = Login;
         service.Logout = Logout;
         service.Register = Register;

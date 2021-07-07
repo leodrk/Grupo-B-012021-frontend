@@ -7,7 +7,7 @@
 
     function Controller($http, $localStorage) {
         var vm = this;
-        var urlBase = 'http://localhost:8080/';
+        var urlBase = 'https://grupo-b-012021-backend.herokuapp.com/';
 
         initController();
 
@@ -52,7 +52,7 @@
                     }]
                 });
             }, function myError(response) {
-                console.log("falló Highcharts");
+                console.log("no aguante todo");
             });
         }
     }
